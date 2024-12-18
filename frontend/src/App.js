@@ -114,7 +114,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>TO-DO-LIST Task for QuadB Tech</h1>
+      <h1>TO-DO-LIST</h1>
 
       <div className="todo-wrapper">
         <div className="todo-input">
