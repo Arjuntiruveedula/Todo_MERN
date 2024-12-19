@@ -45,7 +45,7 @@ function App() {
       alert('Please fill in both the title and description!');
       return;
     }
-  
+
     try {
       const newTodoItem = {
         title: newTitle,
@@ -59,8 +59,8 @@ function App() {
       console.error('Error adding todo:', error);
     }
   };
-  
-  const handleDeleteTodo = async (id, isCompleted) => {
+
+  const handleDeleteTodo = async (id, isCompleted = false) => {
     try {
       await axios.delete(`${API_URL}/todos/${id}`);
       if (isCompleted) {
@@ -161,7 +161,7 @@ function App() {
         <div className="todo-list">
           {!isCompleteScreen &&
             allTodos.map((item, index) => {
-              if (currentEdit === item.id) {
+              if (currentEdit === item._id) {
                 return (
                   <div className="edit__wrapper" key={index}>
                     <input
@@ -194,17 +194,17 @@ function App() {
                     <div>
                       <AiOutlineDelete
                         className="icon"
-                        onClick={() => handleDeleteTodo(item.id)}
+                        onClick={() => handleDeleteTodo(item._id)}
                         title="Delete?"
                       />
                       <BsCheckLg
                         className="check-icon"
-                        onClick={() => handleComplete(item.id)}
+                        onClick={() => handleComplete(item._id)}
                         title="Complete?"
                       />
                       <AiOutlineEdit
                         className="check-icon"
-                        onClick={() => handleEdit(item.id, item)}
+                        onClick={() => handleEdit(item._id, item)}
                         title="Edit?"
                       />
                     </div>
@@ -225,7 +225,7 @@ function App() {
                 <div>
                   <AiOutlineDelete
                     className="icon"
-                    onClick={() => handleDeleteTodo(item.id, true)}
+                    onClick={() => handleDeleteTodo(item._id, true)}
                     title="Delete?"
                   />
                 </div>
