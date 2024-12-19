@@ -16,14 +16,14 @@ app.use(cors({
  // Allow cross-origin requests
 app.use(bodyParser.json()); // Parse incoming JSON data
 
-// MySQL Connection
-const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-});
 
+
+const db = mysql.createConnection({
+  host: 'mysql.railway.internal',
+  user: 'root',
+  password: 'BmdDJrLrpFCckfrJUOgTishJsljrltrR',
+  database: 'todos',
+});
 
 // Test MySQL Connection
 db.connect(err => {
