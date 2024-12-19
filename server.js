@@ -6,7 +6,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 5000;
+const port = "https://todo-mern-q2er.vercel.app";
 
 app.use(cors({
   origin: "https://todo-mern-chi-sable.vercel.app", // Allow requests from the frontend
@@ -134,5 +134,5 @@ app.delete('/completed/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Server running on port `);
 });
