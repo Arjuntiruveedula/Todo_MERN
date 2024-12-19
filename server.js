@@ -55,6 +55,10 @@ db.query(createTableQuery, err => {
 
 // API Routes
 // Get all todos
+app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
 app.get('/todos', (req, res) => {
   db.query('SELECT * FROM todos', (err, results) => {
     if (err) {
