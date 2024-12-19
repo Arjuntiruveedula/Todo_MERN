@@ -8,14 +8,12 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 5000;
 
-app.use(cors(
-
-  {
-    origin:["https://todo-mern-chi-sable.vercel.app/"],
-    methods:["POST","GET","PUT","DELETE"],
-    credentials:true
-  }
-));  // Allow cross-origin requests
+app.use(cors({
+  origin: "https://todo-mern-chi-sable.vercel.app", // Allow requests from the frontend
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, // Optional: Allow cookies if needed
+}));
+ // Allow cross-origin requests
 app.use(bodyParser.json()); // Parse incoming JSON data
 
 // MySQL Connection
