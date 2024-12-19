@@ -4,7 +4,7 @@ import './App.css';
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
 import { BsCheckLg } from 'react-icons/bs';
 
-const API_URL = 'https://todo-mern-q2er.vercel.app';
+const API_URL = 'https://api-ruddy-tau.vercel.app/todos';
 
 function App() {
   const [isCompleteScreen, setIsCompleteScreen] = useState(false);
